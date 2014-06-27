@@ -1,0 +1,12 @@
+ant_test
+========
+
+auto build interaction codes in html
+包括的所有文件组成一个java工程，本身并不是ant，而是将java工程导出成jar包，在ant的build.xml中调用java的相关class来完成复杂的逻
+辑。
+这个工程中主要是根据ant传递过来的json格式的数据生成对应的HTML交互代码片段，ant再将该片段植入到相应的HTML模板，即可完成整个页
+面的代码。
+至于ant的build.xml，其代码生成则是上游软件或者程序完成或者手动输入的，目前项目中用到了两种方式，一种是利用Adobe Indesign的DPS
+插件制作页面然后导出成folio格式文件，该文件可以被解析成图片和对应的xml配置文件，因此可以把xml有效信息提取成Json传递给ant；第
+二中方案是制作Adobe PhotoShop插件，插件直接根据PSD信息导出图片并提取信息生成json导入到ant中，或者直接在插件中重写java的逻辑，
+即可摆脱ant和java，直接产出最终产品。
